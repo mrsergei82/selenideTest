@@ -4,7 +4,7 @@ import static com.codeborne.selenide.Condition.*;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-import io.qameta.allure.selenide.AllureSelenide;
+
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -15,10 +15,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import java.util.concurrent.TimeUnit;
 
 public class MyTest {
-    @Test
-    static void setupAllureReports() {
-        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-    }
+
     @Test
     public void test1(){
         SitePage sitePage = new SitePage();
