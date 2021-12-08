@@ -38,6 +38,11 @@ public class SitePage {
                 .click($(By.name("action:login"))).build().perform();
         return this;
     }
+    public SitePage loginOut() {
+        $(By.xpath("//body/div[2]/header/div[1]/nav[2]/ul/li[2]/a/span")).hover();
+        $(By.xpath("//body/div[2]/header/div[1]/nav[2]/ul/li[2]/ul/li[14]/a")).click();
+        return this;
+    }
     public SitePage assert1(){
         $(By.xpath("//body/div[2]/header/div[1]/nav[2]/ul/li[2]/a/span")).shouldHave()
                 .text().equals("SERGEI777777");
