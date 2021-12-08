@@ -8,10 +8,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 
 import io.qameta.allure.Epic;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -28,27 +25,31 @@ public class MyTest {
     public void test1() {
         SitePage sitePage = new SitePage();
         sitePage.getSite().toLogin().logining().assert1();
-        Selenide.closeWebDriver();
+        //Selenide.closeWebDriver();
     }
     @Test
     @Epic("Buttons")
     public void test2() {
         SitePage sitePage = new SitePage();
         sitePage.getSite().toLogin().logining().toProfile().assert2();
-        Selenide.closeWebDriver();
+        //Selenide.closeWebDriver();
     }
     @Test
     @Epic("Buttons")
     public void test3() {
         SitePage sitePage = new SitePage();
         sitePage.getSite().toLogin().logining().toProfile().toFriends().assert3();
-        Selenide.closeWebDriver();
+        //Selenide.closeWebDriver();
     }
     @Test
     @Epic("Buttons")
     public void test4() {
         SitePage sitePage = new SitePage();
         sitePage.getSite().toLogin().logining().toProfile().toMyProfile().assert4();
+        //Selenide.closeWebDriver();
+    }
+    @AfterEach
+    public void cl(){
         Selenide.closeWebDriver();
     }
 }
